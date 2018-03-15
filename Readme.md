@@ -37,6 +37,7 @@ SMAPITester needs OAuth2 tokens to interact with SMAPI. The first time you run A
 
 
 .alexa_tester_tokens.json # access and refresh tokens
+
 .client_credential # LWA client id and client secret
 
 If for some reason you need to get new tokens (e.g., you've changed your client), you can run:
