@@ -19,7 +19,7 @@ RSpec.describe AlexaSimulator do
     end
 
     it 'has a default locale' do
-       expect(simulator.locale).to eq "en-US"
+      expect(simulator.locale).to eq "en-US"
     end
 
     it 'can be assigned a locale' do

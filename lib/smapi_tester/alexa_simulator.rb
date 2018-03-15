@@ -34,7 +34,7 @@ class AlexaSimulator < AlexaTester
         p id
         self.ids[id] = phrase
       end 
-      sleep(0) if test_phrases.size > 1
+      sleep(4) if test_phrases.size > 1
     end
     puts "======================================================="
     puts "Completed #{ids.size} / #{(test_phrases.size)} request(s)"
