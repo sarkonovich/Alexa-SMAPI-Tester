@@ -1,0 +1,29 @@
+
+  <form action="/send_credentials" method="post">
+      <div>
+        <br>
+        <br>
+          <label for="name">Client ID:</label>
+          <input type="text" size="70" id="id" value="" name="client_id">
+      </div>
+      <br>
+      <br>
+      <div>
+          <label for="mail">Client Secret:</label>
+          <input type="text"  size="70" id="client_secret" value="" name="client_secret">
+      </div>
+      <br>
+      <div>
+          <label for="mail">CallBack URL:</label>
+          <input type="url"  size="70" id="url" value="http://localhost:4567/callback" name="redirect_uri">
+      </div>
+      <br>
+      <div>
+          <label for="text">Scope:</label>
+          <input type="text" size="40" id="scope" value="alexa::ask:skills:test" name="scope">
+      </div>
+      <br><br>
+      <div class="button">
+        <button type="submit">Request Tokens</button>
+      </div>
+  </form>

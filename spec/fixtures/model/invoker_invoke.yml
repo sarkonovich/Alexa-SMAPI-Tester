@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"open magic eight ball"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Thu, 15 Mar 2018 20:01:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - a170cebf-288b-11e8-a740-616e05160be7
+      X-Amz-Date:
+      - Thu, 15 Mar 2018 20:01:20 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"id":"c9b7045c-ffd6-4340-b123-04d31662d9fc","status":"IN_PROGRESS"}'
+    http_version: 
+  recorded_at: Thu, 15 Mar 2018 20:01:21 GMT
+- request:
+    method: get
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/c9b7045c-ffd6-4340-b123-04d31662d9fc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Thu, 15 Mar 2018 20:01:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - a1b6d868-288b-11e8-b07b-b35033e10e6d
+      X-Amz-Date:
+      - Thu, 15 Mar 2018 20:01:21 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"id":"c9b7045c-ffd6-4340-b123-04d31662d9fc","status":"IN_PROGRESS"}'
+    http_version: 
+  recorded_at: Thu, 15 Mar 2018 20:01:21 GMT
+- request:
+    method: get
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/c9b7045c-ffd6-4340-b123-04d31662d9fc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Thu, 15 Mar 2018 20:01:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4271'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - a32eac1f-288b-11e8-90ad-a918e3746c69
+      X-Amz-Date:
+      - Thu, 15 Mar 2018 20:01:23 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"id":"c9b7045c-ffd6-4340-b123-04d31662d9fc","status":"SUCCESSFUL","result":{"skillExecutionInfo":{"invocationRequest":{"endpoint":"https://25337b5b.ngrok.io/magic","body":{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.8db95527-a93f-451a-bc49-2e619cefd70d","application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"}},"context":{"Display":{},"System":{"application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"},"device":{"deviceId":"amzn1.ask.device.AGL4EWBVXFYLP4YTG2Y2FB5OSLSUBS726YJ4NDLVETMDYP4PRYUA5VGTHJODINLW67M66BLMK6YYCCV2SB5SE5Q3XPK3URQBKR6HTOQX4IMGJH7BBXKBOGCT4PFTQLFUL3U72L3W4WCYPJ4YYFQBSKO6I4NK4CDBGAHXLRG7PGV43PWRDT2XE","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"<API_ACCESS_TOKEN>"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.fc7c4bed-f496-4151-8d67-91f8955452bc","timestamp":"2018-03-15T20:01:22Z","locale":"en-US","intent":{"name":"UserQuestion","confirmationStatus":"NONE"}}}},"invocationResponse":{"body":{"version":"1.0","response":{"outputSpeech":{"type":"PlainText","text":"the
+        future is uncertain"},"directives":[],"reprompt":{"outputSpeech":{"type":"PlainText"}},"shouldEndSession":true},"sessionAttributes":{}}},"metrics":{"skillExecutionTimeInMilliseconds":439}}}}'
+    http_version: 
+  recorded_at: Thu, 15 Mar 2018 20:01:23 GMT
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/invocations
+    body:
+      encoding: UTF-8
+      string: '{"endpointRegion":"NA","skillRequest":{"body":{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.8db95527-a93f-451a-bc49-2e619cefd70d","application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"}},"context":{"Display":{},"System":{"application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"},"device":{"deviceId":"amzn1.ask.device.AGL4EWBVXFYLP4YTG2Y2FB5OSLSUBS726YJ4NDLVETMDYP4PRYUA5VGTHJODINLW67M66BLMK6YYCCV2SB5SE5Q3XPK3URQBKR6HTOQX4IMGJH7BBXKBOGCT4PFTQLFUL3U72L3W4WCYPJ4YYFQBSKO6I4NK4CDBGAHXLRG7PGV43PWRDT2XE","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"<API_ACCESS_TOKEN>"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.fc7c4bed-f496-4151-8d67-91f8955452bc","timestamp":"2018-03-15T20:01:22Z","locale":"en-US","intent":{"name":"UserQuestion","confirmationStatus":"NONE"}}}}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Thu, 15 Mar 2018 20:01:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4334'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - a378d414-288b-11e8-9983-09a0303f2a19
+      X-Amz-Date:
+      - Thu, 15 Mar 2018 20:01:24 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"status":"SUCCESSFUL","result":{"skillExecutionInfo":{"invocationRequest":{"endpoint":"https://25337b5b.ngrok.io/magic","body":{"version":"1.0","session":{"new":false,"sessionId":"amzn1.echo-api.session.8db95527-a93f-451a-bc49-2e619cefd70d","application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"}},"context":{"Display":{},"System":{"application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"},"device":{"deviceId":"amzn1.ask.device.AGL4EWBVXFYLP4YTG2Y2FB5OSLSUBS726YJ4NDLVETMDYP4PRYUA5VGTHJODINLW67M66BLMK6YYCCV2SB5SE5Q3XPK3URQBKR6HTOQX4IMGJH7BBXKBOGCT4PFTQLFUL3U72L3W4WCYPJ4YYFQBSKO6I4NK4CDBGAHXLRG7PGV43PWRDT2XE","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"<API_ACCESS_TOKEN>"}},"request":{"type":"IntentRequest","requestId":"amzn1.echo-api.request.fc7c4bed-f496-4151-8d67-91f8955452bc","timestamp":"2018-03-15T20:01:22Z","locale":"en-US","intent":{"name":"UserQuestion","confirmationStatus":"NONE"}}}},"invocationResponse":{"body":{"version":"1.0","sessionAttributes":{"SIS-ENCRYPTED":"AAAAAAAAAABvNQilu+ZXWMPEtd2Y+pSAHgAAAAAAAAARH6IjcJ13ku+NkTDw12r3Ob6hbzhrArxHQatjbB0="},"response":{"outputSpeech":{"type":"PlainText","text":"you
+        control your own destiny"},"reprompt":{"outputSpeech":{"type":"PlainText"}},"directives":[],"shouldEndSession":true}}},"metrics":{"skillExecutionTimeInMilliseconds":272}}}}'
+    http_version: 
+  recorded_at: Thu, 15 Mar 2018 20:01:24 GMT
+recorded_with: VCR 4.0.0

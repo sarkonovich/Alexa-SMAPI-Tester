@@ -1,0 +1,12 @@
+
+.DS_Store
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/lib/smapi_tester/.client_credentials
+/lib/smapi_tester/.alexa_tester_tokens.json

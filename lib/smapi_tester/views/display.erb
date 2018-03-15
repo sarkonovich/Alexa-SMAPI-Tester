@@ -1,0 +1,18 @@
+<html>
+  <head>
+   <title>LWA Credentials</title>
+   </head>
+   <body>
+     <p>
+       <b>access token:</b><br> <font size="2"><%= @access_token %></font><br><br>
+       <b>refresh token:</b><br> <font size="2"><%= @refresh_token %></font><br><br>
+       <form action="/send_sample_request" method="post"><br><br>
+         <div>
+           <input type="hidden" id="access_token" name="access_token" value=<%= @access_token %> >
+         <div class="button">
+           <button type="submit">Send Sample Request</button>
+         </div>
+       </form>
+     </p>
+   </body>
+</html>
