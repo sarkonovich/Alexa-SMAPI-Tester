@@ -43,7 +43,7 @@ class AlexaSimulator < AlexaTester
   end
   
   # ask cli: ask api get-simulation -i [id] -s [skill_id]
-  def get_simulation_results(id: nil, output: [], defaults: true, writer: false)
+  def get_simulation_results(id: nil, output: [], defaults: true, write: false)
     raise "No simulations to retrieve" if self.ids.empty?
     report, output = [], [output].flatten
     ids = id.nil? ? self.ids : [id].flatten
@@ -70,16 +70,22 @@ class AlexaSimulator < AlexaTester
     puts "Successes: #{successes} / Failures: #{failures}"
     puts "================================================================"
 
-    
-    if writer == true
-      File.open("results/#{self.skill_id}=#{DateTime.now.iso8601}.json", "w") do |f|
-        f.write(report.to_json)
-      end
+    if write == true
+      report_name = "#{self.skill_id}_#{DateTime.now.iso8601}.json"
+      write_report(report, report_name)
     end
     report
   end
 
   def url(simulation_id = nil)
     super() + "/skills/#{self.skill_id}/simulations/#{simulation_id}"
+  end
+
+  private
+  
+  def write_report(report, name)
+    File.open(File.dirname(__FILE__) + "/results/#{name}", "w") do |f|
+      f.write(report.to_json)
+    end
   end
 end

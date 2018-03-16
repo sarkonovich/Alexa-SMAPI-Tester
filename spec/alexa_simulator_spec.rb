@@ -82,25 +82,38 @@ RSpec.describe AlexaSimulator do
           end
         end
       end
+    end
 
-      context 'when output option "request" is provided' do
-        it 'the hashes include request information' do
-          VCR.use_cassette('model/get_simulation_results_request_output', :match_requests_on => [:method, :ignore_sim_id]) do
-            simulator.run_simulations
-            results = simulator.get_simulation_results(output: "request")
-            simulation_id = results.first.keys.first
-            expect(results.first[simulation_id]["response"]["body"]["request"].keys).to eq ["type", "requestId", "timestamp", "locale"]
-          end
+    context 'when output option "request" is provided' do
+      it 'the hashes include request information' do
+        VCR.use_cassette('model/get_simulation_results_request_output', :match_requests_on => [:method, :ignore_sim_id]) do
+          simulator.run_simulations
+          results = simulator.get_simulation_results(output: "request")
+          simulation_id = results.first.keys.first
+          expect(results.first[simulation_id]["response"]["body"]["request"].keys).to eq ["type", "requestId", "timestamp", "locale"]
         end
       end
+    end
 
-      context 'when output option "response" is provided' do
-        it 'the hashes include response information' do
-          VCR.use_cassette('model/get_simulation_results_response_output', :match_requests_on => [:method, :ignore_sim_id]) do
-            simulator.run_simulations
-            results = simulator.get_simulation_results(output: "response")
-            simulation_id = results.first.keys.first
-            expect(results.first[simulation_id]["response"]["body"].keys).to eq ["version", "response", "sessionAttributes"]
+    context 'when output option "response" is provided' do
+      it 'the hashes include response information' do
+        VCR.use_cassette('model/get_simulation_results_response_output', :match_requests_on => [:method, :ignore_sim_id]) do
+          simulator.run_simulations
+          results = simulator.get_simulation_results(output: "response")
+          simulation_id = results.first.keys.first
+          expect(results.first[simulation_id]["response"]["body"].keys).to eq ["version", "response", "sessionAttributes"]
+        end
+      end
+    end
+
+    context 'when output option "write" is provided' do
+      it 'the response is written to a file' do
+        VCR.use_cassette('model/get_simulation_results_write_output', :match_requests_on => [:method, :ignore_sim_id]) do
+          allow_any_instance_of(AlexaSimulator).to receive(:write_report).and_return("report content")
+          simulator.run_simulations
+          results = simulator.get_simulation_results(write: true)
+          expect(simulator).to have_received(:write_report) do |result|
+            expect(result).to eq results
           end
         end
       end
