@@ -1,0 +1,286 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"open Magic EightBall"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '39'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - e592a526-2922-11e8-a740-616e05160be7
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:09 GMT
+      X-Amzn-Errortype:
+      - NotAuthorizedException:http://internal.amazon.com/coral/com.amazon.alexa.skillmanagement/
+      Www-Authenticate:
+      - Bearer realm="Login with Amazon"
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"message":"Token is invalid/expired."}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:09 GMT
+- request:
+    method: post
+    uri: https://api.amazon.com/auth/o2/token
+    body:
+      encoding: US-ASCII
+      string: client_id=amzn1.application-oa2-client.146c9523da094e9394134d1c323a97b6&client_secret=f9e47d1be749955f7fbc7f7f1fb8ce6b8acce439e7043a7048ba801fafd21f96&grant_type=refresh_token&redirect_uri=http%3A%2F%2Flocalhost%3A4567%2Fcallback&refresh_token=Atzr%7CIwEBIDnP3VP1rshXMqoams9sjL-HNOGTgnrtZkJPEucknq-iLs34iBX292bln5Z3n2nOR8Vyh72zlo1ufovawTtcdd759RkZT2Q5QyOpEmuLK-gyyr-0c2o8XwbIE8AXJ_NhubBNRPVEKMYvm307o2_YlWwPaySZsGsKJpF8F2e00ge7uZ378L3fC6rVgUu7UbOxzctGFZWY0Jv8N7LRy2DjijXaQ1HEU0_cvUI0N0zkmcZjQ-f7DvZrkRvSx0HbX1poqXSvuseCNtGcfksbIF4aHG9U_SONaH-1P6IbbYQ8mzIln5cBb0uOQC4CW1ALDohPWcr1Dhaa74uSvmVGH18qCKIhx6n-AtnN3gu9w6cCPkjEBCgHGZUeEpT5ypIcC66rD_IIMROuvKy_s1HniyLfogxtwusirOY09zNgE56RkLPQPD_KolmZxewCHIkRU1ou08fD9XL1ZtEjBsmx7oS6vzECZHJRCzg3_o5jJrfyDFpTRkgg3PVT7h0ny-R-SRJuAM0
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.amazon.com
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:09 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '913'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - e5cfd558-2922-11e8-9482-9f50066dbd32
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:09 GMT
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"Atza|IwEBIEfuJQJJe2R6GsdDdQbQuHD1hUqDfy0-GffuuH01Gx3WdnIRO50CQhB6kWJrOpEY7vxz6QNxbXTQaLl-stG2hrg_HXngqofVD0vKbQTpvVvhy7N4pkqQ_C8Dq7fLDowOW2DPJwFr9NiIMbo3Ix0KAs3PLt0I-0gNsxOhkEXD_YwAHYXr1jYBSgG8pXGa_b6LHTgn0CyTJpW94_n9fbnXXQ-Wk2h1hOttKCvfzacFpvgsc1Oc1AXxLeSd1krZ9MRSWnn9Sr1_9QAnycoepAq-k9nkqkSgBDFi51_aoLoiSFOrV0j3nUp4Nwom4N5gBqIOj22_Gdc1dUt7JZkkMkap-bOWi7SZpZRz3vo8xQfCQH1TIiNkbiHkbxCE6PZvQzdsGPKVy7gRXWzOO-6ISGXaDEm8MDnno2igNo47vHjHB1f_6jtV-YDeyXqwD_ZxDO8ddRj7FgN52Us-XazR7sXJBxjSnCHPFGmauZPQAKUSi3wbNJrJpPc0YLIeFhTMHtN9C4SiT8idncwyO-6JqxRmKhjQ","refresh_token":"Atzr|IwEBIDnP3VP1rshXMqoams9sjL-HNOGTgnrtZkJPEucknq-iLs34iBX292bln5Z3n2nOR8Vyh72zlo1ufovawTtcdd759RkZT2Q5QyOpEmuLK-gyyr-0c2o8XwbIE8AXJ_NhubBNRPVEKMYvm307o2_YlWwPaySZsGsKJpF8F2e00ge7uZ378L3fC6rVgUu7UbOxzctGFZWY0Jv8N7LRy2DjijXaQ1HEU0_cvUI0N0zkmcZjQ-f7DvZrkRvSx0HbX1poqXSvuseCNtGcfksbIF4aHG9U_SONaH-1P6IbbYQ8mzIln5cBb0uOQC4CW1ALDohPWcr1Dhaa74uSvmVGH18qCKIhx6n-AtnN3gu9w6cCPkjEBCgHGZUeEpT5ypIcC66rD_IIMROuvKy_s1HniyLfogxtwusirOY09zNgE56RkLPQPD_KolmZxewCHIkRU1ou08fD9XL1ZtEjBsmx7oS6vzECZHJRCzg3_o5jJrfyDFpTRkgg3PVT7h0ny-R-SRJuAM0","token_type":"bearer","expires_in":3600}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:09 GMT
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"open Magic EightBall"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:12 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - e748455e-2922-11e8-9983-09a0303f2a19
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:12 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"id":"a5e974a3-baf9-4b01-b04a-783b3235c367","status":"IN_PROGRESS"}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:12 GMT
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"will I be rich"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - e9f0cf80-2922-11e8-975d-5dd1aad64c4e
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:16 GMT
+      X-Amzn-Errortype:
+      - ConflictingRequestException:http://internal.amazon.com/coral/com.amazon.alexa.skillmanagement/
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"message":"This simulation request conflicts with another one currently
+        being processed."}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:16 GMT
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"will I be rich"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - eb680649-2922-11e8-a6fb-8bc981b4f376
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:19 GMT
+      X-Amzn-Errortype:
+      - ConflictingRequestException:http://internal.amazon.com/coral/com.amazon.alexa.skillmanagement/
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"message":"This simulation request conflicts with another one currently
+        being processed."}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:19 GMT
+- request:
+    method: post
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/
+    body:
+      encoding: UTF-8
+      string: '{"input":{"content":"will I be rich"},"device":{"locale":"en-US"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - ed7c407f-2922-11e8-b254-5f48bd354017
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:22 GMT
+      X-Amzn-Errortype:
+      - ConflictingRequestException:http://internal.amazon.com/coral/com.amazon.alexa.skillmanagement/
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"message":"This simulation request conflicts with another one currently
+        being processed."}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:22 GMT
+- request:
+    method: get
+    uri: https://api.amazonalexa.com/v1/skills/amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c/simulations/a5e974a3-baf9-4b01-b04a-783b3235c367
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Fri, 16 Mar 2018 14:04:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4245'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - f026789c-2922-11e8-a6ff-f39a02ddc0e5
+      X-Amz-Date:
+      - Fri, 16 Mar 2018 14:04:27 GMT
+      Vary:
+      - Accept-Encoding,User-Agent
+    body:
+      encoding: UTF-8
+      string: '{"id":"a5e974a3-baf9-4b01-b04a-783b3235c367","status":"SUCCESSFUL","result":{"skillExecutionInfo":{"invocationRequest":{"endpoint":"https://25337b5b.ngrok.io/magic","body":{"version":"1.0","session":{"new":true,"sessionId":"amzn1.echo-api.session.973cf38b-f31f-4052-a270-48bfa8998995","application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"}},"context":{"Display":{},"System":{"application":{"applicationId":"amzn1.echo-sdk-ams.app.dd0a8464-ce80-49f8-ad10-d506259dd99c"},"user":{"userId":"amzn1.ask.account.AFSTNQRLPMGOQ5MACXMBJ2G6A4IWPMUZK4T7UFV7TMBBWCEXFWSX3QBSKY4A6PLCJF4BQAIDZF7OAZUYLHWE5KVDIBLEG4PBHMLTRQ7XQ2DLF6LESNFOSEIMI4SLEOHGOHV4RIPOFGPEOD4GAFO7UU2MG4ZHYLZDZJ36672DSVQ6JM7XYTGQ6NW4QTBIR7O75V7YX7D2Z3PDVDI","accessToken":"<ACCESS_TOKEN>"},"device":{"deviceId":"amzn1.ask.device.AGL4EWBVXFYLP4YTG2Y2FB5OSLSUBS726YJ4NDLVETMDYP4PRYUA5VGTHJODINLW67M66BLMK6YYCCV2SB5SE5Q3XPK3URQBKR6HTOQX4IMGJH7BBXKBOGCT4PFTQLFUL3U72L3W4WCYPJ4YYFQBSKO6I4NK4CDBGAHXLRG7PGV43PWRDT2XE","supportedInterfaces":{"AudioPlayer":{},"Display":{"templateVersion":"1.0","markupVersion":"1.0"}}},"apiEndpoint":"https://api.amazonalexa.com","apiAccessToken":"<API_ACCESS_TOKEN>"}},"request":{"type":"LaunchRequest","requestId":"amzn1.echo-api.request.a4b44f4d-0ba3-411b-b9fa-61f1010bd1bb","timestamp":"2018-03-16T14:04:14Z","locale":"en-US"}}},"invocationResponse":{"body":{"version":"1.0","response":{"outputSpeech":{"type":"PlainText","text":"I''m
+        ready to tell your future. Ask me any yes no question."},"directives":[],"reprompt":{"outputSpeech":{"type":"PlainText"}},"shouldEndSession":false},"sessionAttributes":{}}},"metrics":{"skillExecutionTimeInMilliseconds":481}}}}'
+    http_version: 
+  recorded_at: Fri, 16 Mar 2018 14:04:27 GMT
+recorded_with: VCR 4.0.0

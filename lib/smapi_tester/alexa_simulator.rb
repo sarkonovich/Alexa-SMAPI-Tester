@@ -14,9 +14,9 @@ class AlexaSimulator < AlexaTester
     @ids = {}
   end
 
-  def test(phrases: self.phrases, output: [], defaults: true)
+  def test(phrases: self.phrases, output: [], defaults: true, write: false)
     run_simulations(phrases)
-    get_simulation_results(output: output, defaults: defaults)
+    get_simulation_results(output: output, defaults: defaults, write: write)
   end
 
   # ask cli: ask api simulate-skill -t [request_string] -s [skill_id] -l [locale]
@@ -26,12 +26,10 @@ class AlexaSimulator < AlexaTester
     test_phrases = test_phrases.class == String ? [test_phrases] : test_phrases
     test_phrases.each do |phrase|
       body =  {"input": {"content": phrase},"device": {"locale": self.locale}}
-      p body
       api_call = lambda {smapi_post(url, body)}
       result = handle_api_result(api_call)
       if result["id"]
         id = result["id"]
-        p id
         self.ids[id] = phrase
       end 
       sleep(4) if test_phrases.size > 1

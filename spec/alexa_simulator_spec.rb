@@ -117,6 +117,42 @@ RSpec.describe AlexaSimulator do
           end
         end
       end
-    end
+    end  
   end
+
+  describe '#test' do
+    it 'runs the simulations' do
+      VCR.use_cassette('model/test', :match_requests_on => [:method, :ignore_sim_id]) do
+        expect(simulator.ids.any?).to eq false
+        simulator.test
+        expect(simulator.ids.any?).to eq true
+      end  
+    end
+
+    it 'it gets the simulation results' do
+      VCR.use_cassette('model/test', :match_requests_on => [:method, :ignore_sim_id]) do
+        allow_any_instance_of(AlexaSimulator).to receive(:get_simulation_results)
+        simulator.test
+        expect(simulator).to have_received(:get_simulation_results)
+      end
+    end
+
+    it 'can be take output parameters' do
+      VCR.use_cassette('model/test_request_output', :match_requests_on => [:method, :ignore_sim_id]) do
+        results = simulator.test(output: "request")
+        simulation_id = results.first.keys.first
+        expect(results.first[simulation_id]["response"]["body"]["request"].keys).to eq ["type", "requestId", "timestamp", "locale"]
+      end
+    end
+
+    it 'can write out the results' do
+       VCR.use_cassette('model/test_write_output', :match_requests_on => [:method, :ignore_sim_id]) do
+        allow_any_instance_of(AlexaSimulator).to receive(:write_report).and_return("report content")
+        results = simulator.test(write: true)
+        expect(simulator).to have_received(:write_report) do |result|
+          expect(result).to eq results
+        end
+      end
+    end
+  end  
 end

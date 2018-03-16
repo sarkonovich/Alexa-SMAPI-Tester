@@ -88,12 +88,20 @@ Successes: 2 / Failures: 0
  By default, this method returns only whether the simulation was SUCCESSFUL or a FAILURE.
  However, it can take several output options:
  
- 
- - request    # returns the request JSON
- - response   # returns the Alexa response JSON
- - result     # returns the entire JSON response
+ - output_speech  # adds the spoken output to default result
+ - request        # returns the request JSON
+ - response       # returns the response JSON
+ - result         # returns the entire JSON response
  
 For example,
+
+
+````simulator.get_simulation_results(output: "output_speech")````
+ ````ruby
+ => [{"7d303b50-78b8-4627-b562-a85d776c388a"=>
+   [{"result_status"=>"SUCCESSFUL"}, {"invocation_phrase"=>"open magic eight ball"}, {"output_speech"=>"I'm ready to tell your future. Ask me any yes no question."}]},
+ {"ef9cba18-65d2-4dd7-ac81-141afcf391c4"=>[{"result_status"=>"SUCCESSFUL"}, {"invocation_phrase"=>"will I be rich"}, {"output_speech"=>"no chance"}]}]
+ ````
 
 ````simulator.get_simulation_results(output: "response")````
 ````ruby
@@ -129,9 +137,9 @@ You can write the results to a file:
 
  ````simulator.test````
  
- You can pass in test phrases as a named parameter:
+ You can pass in test phrases as a named parameter, and specify output formats:
 
- ````simulator.test(phrases: ["open magic eight ball", "will I marry"])````
+ ````simulator.test(phrases: ["open magic eight ball", "will I marry"], output: "request")````
  
  ````ruby
 "e9ed4562-f192-42ec-b8a1-351980776d4c"
