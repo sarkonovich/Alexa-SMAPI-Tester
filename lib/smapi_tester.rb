@@ -12,6 +12,7 @@ require_relative 'smapi_tester/alexa_tester.rb'
 require_relative 'smapi_tester/alexa_simulator.rb'
 require_relative 'smapi_tester/alexa_init.rb'
 require_relative 'smapi_tester/alexa_invoker.rb'
+require_relative 'smapi_tester/response_object.rb'
 
 
 module SMAPITester
