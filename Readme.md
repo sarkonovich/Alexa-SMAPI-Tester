@@ -146,6 +146,7 @@ response = ResponseObject.new
 response.session_attributes(results[1])
 response.should_end_session(results[1])
 response.output_speech(results[1])
+````
 
  ##### #test #####
 
