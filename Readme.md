@@ -137,15 +137,21 @@ You can write the results to a file:
 
 ##### ResponseObject
 
-The ResponseObject class that just bundles some convenience methods for handling the response JSON.
+A ResponseObject will take the AlexaSimulator "result" output and turn it into a Ruby OStruct. It is meant to be used in RSpec testing, as shown in the examle at the bottom of the Readme
+
+
+You can grab the #reponse_body or the #request_body from the returned results.
+
 
 ````ruby
-results = simulator.get_simulation_results(output: "response")
-response = ResponseObject.new
-# results will be an array
-response.session_attributes(results[1])
-response.should_end_session(results[1])
-response.output_speech(results[1])
+result = simulator.get_simulation_results(output: "result")
+returned = ResponseObject.new(result)
+
+# returned will be an array. Indicate which request body you want to look at by passing the array element number.
+returned.request_body(0).request.type
+returned.request_body(1).session.attributes
+returned.request_body(0).session.new
+returned.response_body(1).response.outputSpeech.text
 ````
 
  ##### #test #####
@@ -217,25 +223,31 @@ PHRASES = ["open big sky", "yes", "ask big sky if it will rain in three hours"]
 BigSky = AlexaSimulator.new(SKILL_ID, PHRASES)
 
 RSpec.describe BigSky do
-  results = BigSky.test(output: "response")
-  let(:response) { ResponseObject.new }
+  results = BigSky.test(output: "result")
+  p results
+  let(:simulation) { ResponseObject.new(results) }
   context 'open big sky' do
-    it 'keeps session open after launch'  do
-      expect(response.should_end_session(results[0])).to eq false
-    end
-    
-     it 'ends session after follow up'  do
-      expect(response.should_end_session(results[1])).to eq true
+    it 'keeps session open'  do
+      expect(simulation.response_body(0).response.shouldEndSession).to eq false
     end
 
     it 'returns session attributes'  do
-      expect(response.session_attributes(results[0]).keys).to eq ["humidity_wind", "details_store"]
+      expect(simulation.response_body(0).sessionAttributes.to_h.keys).to eq [:humidity_wind, :details_store]
     end
 
     it 'gives current weather'  do
-      expect(response.output_speech(results[0])).to include "Currently,"
+      expect(simulation.response_body(0).response.outputSpeech.text).to include "Currently,"
+    end
+
+    it 'is a LaunchRequest'  do
+      expect(simulation.request_body(0).request.type).to eq "LaunchRequest"
+    end
+
+    it 'is an IntentRequest'  do
+      expect(simulation.request_body(1).request.type).to eq "IntentRequest"
     end
   end
 end
+
 
 ````
