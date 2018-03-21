@@ -224,7 +224,6 @@ BigSky = AlexaSimulator.new(SKILL_ID, PHRASES)
 
 RSpec.describe BigSky do
   results = BigSky.test(output: "result")
-  p results
   let(:simulation) { ResponseObject.new(results) }
   context 'open big sky' do
     it 'keeps session open'  do
@@ -242,7 +241,9 @@ RSpec.describe BigSky do
     it 'is a LaunchRequest'  do
       expect(simulation.request_body(0).request.type).to eq "LaunchRequest"
     end
+  end
 
+  context 'ask for more details' do
     it 'is an IntentRequest'  do
       expect(simulation.request_body(1).request.type).to eq "IntentRequest"
     end
