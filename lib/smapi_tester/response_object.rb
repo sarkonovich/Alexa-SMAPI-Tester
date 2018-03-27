@@ -9,7 +9,7 @@ class ResponseObject
     @response = to_ostruct(simulator_response)
   end
 
-  def request_body(array_item)  
+  def request_body(array_item = 0)  
     get_body(array_item).each { |k|
       if k.to_h.keys.first == :result
         return k.result.result.skillExecutionInfo.invocationRequest.body
@@ -17,7 +17,7 @@ class ResponseObject
     }
   end
 
-  def response_body(array_item)  
+  def response_body(array_item = 0)  
     get_body(array_item).each { |k|
       if k.to_h.keys.first == :result
         return k.result.result.skillExecutionInfo.invocationResponse.body
